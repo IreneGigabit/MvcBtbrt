@@ -1,0 +1,53 @@
+﻿@model IEnumerable<MvcBtbrt.Models.ViewModel.APCustVM>
+@{
+    ViewBag.Title = "客戶維護";
+}
+
+
+@using (Html.BeginForm()) {
+    <p>
+        客戶名稱：@Html.TextBox("searchName")
+        <input type="submit" value="查詢" />
+    </p>
+}
+
+@if (Model != null) {
+    <table width="100%" cellspacing="1" cellpadding="0" class="bg" border=0>
+        <tr align="left">
+            <td align="center" class="lightbluetable" nowrap>客戶編號</td>
+            <td align="center" class="lightbluetable" nowrap>客戶名稱</td>
+            <td align="center" class="lightbluetable" nowrap>代表人</td>
+            <td align="center" class="lightbluetable" nowrap>統一編號</td>
+            <td align="center" class="lightbluetable" nowrap>建檔日期</td>
+            <td align="center" class="lightbluetable" nowrap>專商營洽</td>
+            <td align="center" class="lightbluetable" nowrap>聯絡人</td>
+            <td align="center" class="lightbluetable" nowrap>契約書</td>
+            <td align="center" class="lightbluetable" nowrap>債信</td>
+            <td align="center" class="lightbluetable" nowrap>登錄</td>
+        </tr>
+
+        @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.apcusts.cust_seq)
+            </td>
+            <td>
+                @Html.Raw(item.apcusts.ap_cname1 + item.apcusts.ap_cname2)
+            </td>
+            <td>
+                @Html.Raw(item.apcusts.ap_crep)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.custzs.id_no)
+            </td>
+            <td>
+                @Html.Raw(Convert.ToDateTime(item.apcusts.in_date).ToString("yyyy/MM/dd"))
+            </td>
+            <td>
+                @(item.custzs.pscode)/@(item.custzs.tscode)<br />
+				@(item.psc_name)/@(item.tsc_name)
+            </td>
+        </tr>
+        }
+    </table>
+}

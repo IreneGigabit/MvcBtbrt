@@ -1,0 +1,68 @@
+﻿<div class="tab-pane fade" id="attention" ng-controller="Attent_Controller">
+    <table border="0" class=bluetable cellspacing="1" cellpadding="2" style="font-size: 9pt" width="100%">
+        <tr>
+            <td class="lightbluetable" align="right">客戶編號：</td>
+            <td class="whitetablebg" colspan=3>
+                <input type="text" ng-model="att.cust_area" size="1" readonly class="sedit">-
+                <input type="text" ng-model="att.cust_seq" size="8" readonly class="sedit">
+            </td>
+        </tr>
+        <tr>
+            <td class="lightbluetable" align="right">聯絡人：</td>
+            <td class="whitetablebg">
+                SELECT Att_sql, Attention FROM custz_Att
+                where Cust_area='" & trim(request("cust_area")) & "'
+                and (Cust_seq ='" & trim(request("cust_seq")) & "')
+                and (dept='T' or dept is null or dept='')
+                and (att_code like 'N%' or att_code='' or att_code is null)
+                <select ng-model=att.att_sql size=1 ng-change="getatt reg.tfy_cust_area.value,reg.tfy_cust_seq.value,reg.tfy_att_sql.value">
+                    <option value="" style="color:blue">請選擇</option>
+                    <option ng-repeat="t in optAttent" value="{{t.Att_sql}}">{{t.Att_sql}}---{{t.Attention}}</option>
+                </select>
+
+                <input type="button" value="重新整理" ng-click="xmlatt reg.tfy_cust_area.value,reg.tfy_cust_seq.value">
+            </td>
+            <td class=lightbluetable align=right>所屬部門：</td>
+            <td class=whitetablebg><input type=text ng-model=att.dept class="sedit" readonly></td>
+        </tr>
+        <tr>
+            <td class=lightbluetable align=right>職稱：</td>
+            <td class=whitetablebg><input type=text ng-model=att.title size=11 maxlength=10 class="sedit" readonly></td>
+            <td class=lightbluetable align=right>聯絡部門：</td>
+            <td class=whitetablebg><input type=text ng-model=att.dept size=22 maxlength=20 class="sedit" readonly></td>
+        </tr>
+        <tr>
+            <td class="lightbluetable" align="right">聯絡公司：</td>
+            <td class="whitetablebg">
+                <input type="text" ng-model="att.company" size="40" maxlength="60" class="sedit" readonly>
+            </td>
+            <td class=lightbluetable align=right>聯絡電話：</td>
+            <td class=whitetablebg>
+                (<input type=text ng-model=att.tel0 size=4 maxlength=4 class="sedit" readonly>)
+                <input type=text ng-model=att.tel size=16 maxlength=15 class="sedit" readonly>-<input type=text ng-model=att.tel1 size=5 maxlength=5 class="sedit" readonly>
+            </td>
+        </tr>
+        <tr>
+            <td class=lightbluetable align=right>行動電話：</td>
+            <td class=whitetablebg><input type=text ng-model=att.mobile size=11 maxlength=10 class="sedit" readonly></td>
+            <td class=lightbluetable align=right>傳真號碼：</td>
+            <td class=whitetablebg><input type=text ng-model=att.fax size=16 maxlength=15 class="sedit" readonly></td>
+        </tr>
+        <tr>
+            <td class=lightbluetable align=right>聯絡地址：</td>
+            <td class=whitetablebg colspan=3>
+                <input type=text ng-model=att.zip size=8 maxlength=8 class="sedit" readonly>
+                <input type=text ng-model=att.addr1 size=33 maxlength=30 class="sedit" readonly>
+                <input type=text ng-model=att.addr2 size=33 maxlength=30 class="sedit" readonly>
+            </td>
+        </tr>
+        <tr>
+            <td class=lightbluetable align=right>電子郵件：</td>
+            <td class=whitetablebg colspan=3><input type=text ng-model=att.email size=44 maxlength=40 class="sedit" readonly></td>
+        </tr>
+        <tr>
+            <td class=lightbluetable align=right>郵寄雜誌：</td>
+            <td class=whitetablebg colspan=3><input type=text ng-model=att.mag size=22 class="sedit" readonly></td>
+        </tr>
+    </table>
+</div>

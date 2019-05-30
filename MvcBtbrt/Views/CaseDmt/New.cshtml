@@ -1,0 +1,34 @@
+﻿@{
+    ViewBag.Title = "新增接洽";
+}
+
+<div ng-app="AngularJs_Module">
+    <ul id="myTab" class="nav nav-tabs">
+        <li class="nav-item mr-1"><a class="nav-link active" id="cust-tab" href="#cust" data-toggle="tab">案件客戶</a></li>
+        <li class="nav-item mr-1"><a class="nav-link" id="attention-tab" href="#attention" data-toggle="tab">案件聯絡人</a></li>
+        <li class="nav-item mr-1"><a class="nav-link" id="apcust-tab" href="#apcust" data-toggle="tab">案件申請人</a></li>
+        <li class="nav-item mr-1"><a class="nav-link" id="dmt-tab" href="#dmt" data-toggle="tab">案件主檔</a></li>
+        <li class="nav-item mr-1"><a class="nav-link" id="casefee-tab" href="#casefee" data-toggle="tab">收費與接洽事項</a></li>
+        <li class="nav-item mr-1"><a class="nav-link" id="case-tab" href="#case" data-toggle="tab">交辦內容</a></li>
+        <li class="nav-item mr-1"><a class="nav-link" id="attach-tab" href="#attach" data-toggle="tab">文件上傳</a></li>
+    </ul>
+
+    <div class="row container-fluid">
+        <div id="myTabContent" class="tab-content">
+            @Html.Partial("_CustPartial")
+
+            @Html.Partial("_AttentionPartial")
+
+            @Html.Partial("_APCustPartial")
+
+            @Html.Partial("_DmtPartial")
+
+            @Html.Partial("_CaseFeePartial")
+
+            @Html.Partial("_CasePartial")
+
+            @Html.Partial("_AttachPartial")
+
+        </div>
+    </div>
+</div>

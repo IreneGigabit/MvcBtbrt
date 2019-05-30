@@ -1,0 +1,37 @@
+﻿/*分頁樣式*/
+.nav-tabs > .nav-item a:focus {
+    outline: unset;
+}
+
+.nav-tabs > .nav-item a:hover {
+    cursor: pointer;
+    /*border: 1px solid #fff !important;*/
+}
+
+.nav-tabs > .nav-item a {
+    color: black !important;
+    font-weight: 600;
+    padding: 2px 15px 5px 15px;
+    border-right: 2px solid #5741A3 !important;
+    background-color: #D6D6FF;
+    /*border-bottom: 2px solid #D6D6FF !important;*/
+    border-bottom: 1px solid #5741A3 !important;
+}
+
+.nav-tabs > .nav-item .active {
+    color: #5741A3 !important;
+    /*border:none !important;*/
+    /*border-bottom: 3px solid #5741A3 !important;*/
+    font-weight: 600;
+    background-color: #ffff00 !important;
+}
+
+.nav-tabs > .nav-item .active:hover {
+    /*border:none !important;*/
+    /*border-bottom: 3px solid #5741A3 !important;*/
+}
+
+.nav-tabs {
+    /*border-bottom: none !important;*/
+    border-bottom: 1px solid #5741A3 !important;
+}

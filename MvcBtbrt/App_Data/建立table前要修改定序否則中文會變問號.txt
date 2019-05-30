@@ -1,0 +1,20 @@
+alter database "C:\Users\m1583\Documents\visual studio 2013\Projects\MvcBtbrt\MvcBtbrt\App_Data\sysctrl.mdf" set single_user with rollback immediate ;
+go
+
+alter database "C:\Users\m1583\Documents\visual studio 2013\Projects\MvcBtbrt\MvcBtbrt\App_Data\sysctrl.mdf" collate Chinese_Taiwan_Stroke_CI_AS ;
+go
+
+alter database "C:\Users\m1583\Documents\visual studio 2013\Projects\MvcBtbrt\MvcBtbrt\App_Data\sysctrl.mdf" set multi_user;
+go
+
+
+
+
+alter database "C:\Users\m1583\Documents\visual studio 2013\Projects\MvcBtbrt\MvcBtbrt\App_Data\sindbs.mdf" set single_user with rollback immediate ;
+go
+
+alter database "C:\Users\m1583\Documents\visual studio 2013\Projects\MvcBtbrt\MvcBtbrt\App_Data\sindbs.mdf" collate Chinese_Taiwan_Stroke_CI_AS ;
+go
+
+alter database "C:\Users\m1583\Documents\visual studio 2013\Projects\MvcBtbrt\MvcBtbrt\App_Data\sindbs.mdf" set multi_user;
+go
