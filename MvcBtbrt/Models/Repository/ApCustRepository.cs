@@ -21,7 +21,7 @@ namespace MvcBtbrt.Models.Repository
 			var c = from d in db.apcust select d;
 			return (Count > 0 ? c.Take(Count) : c);
 		}
-
+		/*
 		public IEnumerable<APCustVM> GetApCustByName(string ap_cname1)   //抓like ap_cname1符合的資料
 			{
 			var result = (from a in db.apcust
@@ -38,8 +38,9 @@ namespace MvcBtbrt.Models.Repository
 						});
 			return result;
 		}
-		/*
-		 * public IEnumerable<apcust> GetApCustByName(string ap_cname1)   //抓like ap_cname1符合的資料
+		*/
+		
+		 public IEnumerable<apcust> GetApCustByName(string ap_cname1)   //抓like ap_cname1符合的資料
 		{
 			//var c = (from d in db.apcust where d.ap_cname1.Contains(ap_cname1) select d);
 			//var c = db.apcust.Where(a => a.ap_cname1.Contains(ap_cname1));
@@ -52,6 +53,7 @@ namespace MvcBtbrt.Models.Repository
 				return data;
 			}
 
+			/*
 			using (DBHelper conn = new DBHelper(ConfigurationManager.ConnectionStrings["BtbrtDapper1"].ToString())) {
 				DataTable dt = new DataTable();
 				conn.DataTable("select * from apcust where ap_cname1 like '%英業%'", dt);
@@ -59,9 +61,9 @@ namespace MvcBtbrt.Models.Repository
 				List<apcust> rst = new List<apcust>();
 				rst.Add(rst1);
 				return rst;
-			}
+			}*/
 		}
-		*/
+		
 		public apcust GetApCustBySqlno(int sqlno)   //符合sqlno的資料
 		{
 			var c = (from d in db.apcust where d.apsqlno.Equals(sqlno) select d).FirstOrDefault();

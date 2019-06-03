@@ -1,5 +1,20 @@
-﻿@{
+﻿@model MvcBtbrt.Models.dmt1
+
+@{
     ViewBag.Title = "工作清單";
 }
 
 <h2>Index</h2>
+@using (Html.BeginForm("update", "home", FormMethod.Post, new { id = "reg" })) {
+	@Html.Label("seq:") @Html.EditorFor(a => a.seq)<br />
+	@Html.Label("seq1:") @Html.EditorFor(a => a.seq1)<br />
+	@Html.Label("appl_name:") @Html.EditorFor(a => a.appl_name)<br />
+	@Html.Label("term1:") @Html.EditorFor(a => a.term1)<br />
+	@Html.Label("term2:") @Html.EditorFor(a => a.term2)<br />
+	@Html.Label("apply_no:") @Html.EditorFor(a => a.apply_no)<br />
+	@Html.Label("issue_no:") @Html.EditorFor(a => a.issue_no)<br />
+
+	<div>
+		<input type="submit" value="Update" />
+	</div>
+}
