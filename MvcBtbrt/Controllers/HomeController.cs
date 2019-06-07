@@ -14,7 +14,8 @@ namespace MvcBtbrt.Controllers
     {
 		//
 		// GET: /Home/
-		protected string connStr = ConfigurationManager.ConnectionStrings["BtbrtHome"].ToString();
+		//protected string connStr = ConfigurationManager.ConnectionStrings["BtbrtHome"].ToString();
+        protected string connStr = ConfigurationManager.ConnectionStrings["BtbrtMom"].ToString();
 
 		public ActionResult Index()
         {
